@@ -7,8 +7,3 @@ export const homeDatas =
         "Locations",
         "Types",
     ]
-
-export const HomeLinks =
-    [
-        
-    ]
