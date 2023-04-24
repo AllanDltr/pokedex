@@ -2,8 +2,8 @@ export const homeDatas =
     [
         "Pokedex",
         "Moves",
-        "Abilities",
-        "Items",
-        "Locations",
-        "Types",
+        // "Abilities",
+        // "Items",
+        // "Locations",
+        // "Types",
     ]

@@ -1,0 +1,27 @@
+.card-title {
+    text-transform: capitalize;
+}
+
+.types {
+    width:60px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    border-color: rgb(204, 201, 201);
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    background-color: rgb(204, 201, 201);
+    color: black;
+}
+
+figure {
+    justify-content: flex-end !important;
+}
+
+.card.image-full:before {
+    background: none !important;
+}
+
+.card-title {
+    color:black;
+}
