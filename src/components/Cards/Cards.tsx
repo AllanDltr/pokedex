@@ -95,7 +95,7 @@ export const Cards = () => {
                         </div>
                     </div>
                     <div className="flex items-center px-10 arrowEvo">
-                         <p> -> </p>
+                         <p> - </p>
                          <p> Lvl 16 </p>
                          </div>
                     <div className="avatar ">
