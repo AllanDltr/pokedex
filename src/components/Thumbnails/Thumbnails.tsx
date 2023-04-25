@@ -10,17 +10,15 @@ using a card component.
 The card component takes a pokemon object as a prop.
 */
 }
+type Pokemon = {
+  name?: string
+}
 
 export const Thumbnails = () => {
   const navigate = useNavigate()
   const pokemons = pokemonDatas
-  const bulbasaur = bulbasaurDatas[0].sprites.front_default
-  const types = bulbasaurDatas[0].types
-
-  type Pokemon = {
-    name?: string
-    sprites?: string
-  }
+  const [types1, types2] = [bulbasaurDatas[0].types[0].type.name, bulbasaurDatas[0].types[1].type.name]
+  const [sprites] = [bulbasaurDatas[0].sprites.front_default]
 
   return (
     <div className="grid grid-cols-2 gap-10">
@@ -30,13 +28,12 @@ export const Thumbnails = () => {
           key={pokemon.name}
         >
           <figure>
-            <img src={bulbasaur} alt={pokemon.name} />
+            <img src={sprites} alt={pokemon.name} />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{pokemon.name}</h2>
-            {types.map((type: string) => (
-              <p className="types" key={type.type.name}> {type.type.name} </p>
-            ))}
+            <p className="types"> {types1} </p>
+            <p className="types"> {types2} </p>
             <div className="card-actions justify-end">
               <button
                 className="btn btn-ghost btn-xs"
