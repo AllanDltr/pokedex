@@ -2,7 +2,7 @@ import { bulbasaurDatas, bulbasaurSpeciesDatas } from "../datas/pokemons"
 interface PokemonData {
   name?: string
   order?: number
-  types?: string[]
+  types: string[]
   sprites?: string
   description?: string
   height: number
