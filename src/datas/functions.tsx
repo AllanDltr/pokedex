@@ -16,17 +16,20 @@ interface PokemonData {
 }
 
 type Pokemon = {
-    name?: string
-  }
+  name?: string
+}
 
 const pokemon: Pokemon = {
-    name: bulbasaurDatas[0].name,
+  name: bulbasaurDatas[0].name,
 }
 
 const pokemonData: PokemonData = {
   name: bulbasaurDatas[0].name,
   order: bulbasaurDatas[0].order,
-  types: [bulbasaurDatas[0].types[0]?.type.name, bulbasaurDatas[0].types[1]?.type.name],
+  types: [
+    bulbasaurDatas[0].types[0]?.type.name,
+    bulbasaurDatas[0].types[1]?.type.name,
+  ],
   sprites: bulbasaurDatas[0].sprites.front_default,
   description: bulbasaurSpeciesDatas[0].flavor_text_entries[0].flavor_text,
   height: bulbasaurDatas[0].height,
@@ -38,5 +41,5 @@ const pokemonData: PokemonData = {
   DefSp: bulbasaurDatas[0].stats[4].base_stat,
   Spd: bulbasaurDatas[0].stats[5].base_stat,
 }
-export { pokemonData, pokemon}
+export { pokemonData, pokemon }
 export type { Pokemon }

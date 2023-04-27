@@ -10,21 +10,3 @@
     border-width: 1px;
     text-transform: capitalize;
 }
-
-.statsPkmn {
-    display: flex;
-    box-shadow: 0px 0px 25px 15px rgb(0 0 0 / 0.1);
-    width:95%;
-}
-
-.statPkmn {
-    width:50% !important;
-}
-
-.valuePkmn {
-    font-size: 20px !important;
-}
-
-.evolutionPkmn {
-    background-color: rgb(241, 241, 241);
-}

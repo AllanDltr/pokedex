@@ -12,9 +12,7 @@ export const Buttons = () => {
   return (
     <>
       {homeDatas.map((data: string) => (
-        <button onClick={handleClick}
-        className="btn mx-8 my-2"
-        key={data}>
+        <button onClick={handleClick} className="btn mx-8 my-2" key={data}>
           {data}
         </button>
       ))}
