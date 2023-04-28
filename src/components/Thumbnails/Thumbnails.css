@@ -16,6 +16,13 @@
 
 figure {
     justify-content: flex-end !important;
+    margin-left:6rem !important;
+}
+
+figure > img {
+    height:85px !important;
+    width: 150px !important;
+    object-fit: unset !important;
 }
 
 .card.image-full:before {
@@ -24,4 +31,12 @@ figure {
 
 .card-title {
     color:black;
+}
+
+.thumbnailSize {
+    width:175px;
+}
+
+.bodySize {
+    padding:1rem !important;
 }

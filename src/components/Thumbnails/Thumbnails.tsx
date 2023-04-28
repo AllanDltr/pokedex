@@ -7,27 +7,29 @@ import { pokemonData } from "../../datas/functions"
 export const Thumbnails = () => {
   const navigate = useNavigate()
   const pokemons = pokemonDatas
+  const id=pokemonDatas[0].url.split('/')[6]
+  console.log(id)
 
   return (
     <div className="grid grid-cols-2 gap-10">
       {pokemons.map((pokemon: Pokemon) => (
         <div
-          className="card w-80 bg-base-100 shadow-xl image-full my-5"
+          className="card bg-base-100 shadow-xl image-full thumbnailSize"
           key={pokemon.name}
         >
           <figure>
-            <img src={pokemonData.sprites} alt={pokemon.name} />
+            <img src={`../../public/img/${pokemon.url.split('/')[6]}.png`} alt={pokemon.name} />
           </figure>
-          <div className="card-body">
+          <div className="card-body bodySize">
             <h2 className="card-title">{pokemon.name}</h2>
-            <p className="types"> {pokemonData.types[0]} </p>
-            <p className="types"> {pokemonData.types[1]} </p>
-            <div className="card-actions justify-end">
+            <p className="types" style={{backgroundColor: `var(--${pokemonData.types[0]})` }}> {pokemonData.types[0]} </p>
+            <p className="types" style={{backgroundColor: `var(--${pokemonData.types[1]})` }}> {pokemonData.types[1]} </p>
+            <div className="card-actions justify-center">
               <button
                 className="btn btn-ghost btn-xs"
-                onClick={() => navigate(`/pokedex/${pokemon.name}`)}
+                onClick={() => navigate(`/${pokemon.name}`)}
               >
-                Check it
+                Learn More
               </button>
             </div>
           </div>

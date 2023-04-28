@@ -22,6 +22,12 @@ export const TabAbout = () => {
           </div>
         </div>
       </div>
+      <div className="text-m m-4">
+      <p className="text-xl font-bold"> Shiny </p>
+      <div className="avatarPkmn avatar flex justify-center mt-8" >
+        <img src={pokemonData.spritesShiny} />
+        </div>
+        </div>
     </div>
   )
 }

@@ -1,9 +1,17 @@
-import { bulbasaurDatas, bulbasaurSpeciesDatas } from "../datas/pokemons"
+import {
+  bulbasaurDatas,
+  bulbasaurSpeciesDatas,
+  bulbasaurEvoDatas,
+  ivysaurDatas,
+  venusaurDatas,
+  pokemonDatas,
+} from "../datas/pokemons"
 interface PokemonData {
   name?: string
   order?: number
   types: string[]
   sprites?: string
+  spritesShiny?: string
   description?: string
   height: number
   weight: number
@@ -13,14 +21,22 @@ interface PokemonData {
   AtkSp: number
   DefSp: number
   Spd: number
+  evolution: number[]
+  evolution2: number[]
+  evolutionSprites: string
+  evolution2Sprites: string
 }
 
 type Pokemon = {
-  name?: string
+  name: string
+  order?: number
+  url: string
 }
 
 const pokemon: Pokemon = {
   name: bulbasaurDatas[0].name,
+  order: bulbasaurDatas[0].order,
+  url: pokemonDatas[0].url,
 }
 
 const pokemonData: PokemonData = {
@@ -31,6 +47,7 @@ const pokemonData: PokemonData = {
     bulbasaurDatas[0].types[1]?.type.name,
   ],
   sprites: bulbasaurDatas[0].sprites.front_default,
+  spritesShiny: bulbasaurDatas[0].sprites.front_shiny,
   description: bulbasaurSpeciesDatas[0].flavor_text_entries[0].flavor_text,
   height: bulbasaurDatas[0].height,
   weight: bulbasaurDatas[0].weight,
@@ -40,6 +57,15 @@ const pokemonData: PokemonData = {
   AtkSp: bulbasaurDatas[0].stats[3].base_stat,
   DefSp: bulbasaurDatas[0].stats[4].base_stat,
   Spd: bulbasaurDatas[0].stats[5].base_stat,
+  evolution: [
+    bulbasaurEvoDatas[0].chain.evolves_to[0].evolution_details[0].min_level,
+],
+  evolution2: [
+  bulbasaurEvoDatas[0].chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level,
+  ],
+  evolutionSprites: ivysaurDatas[0].sprites.front_default,
+  evolution2Sprites: venusaurDatas[0].sprites.front_default,
+  // venusaurDatas[0].sprites.front_default,
 }
 export { pokemonData, pokemon }
 export type { Pokemon }

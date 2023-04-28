@@ -8,8 +8,6 @@ export const Home = () => {
             <input type="text" placeholder="Search Pokemon, move, ability, etc." className="input input-bordered w-full max-w-xs mx-6 mb-10" />
 
             <Buttons/>
-
-            {/* Section News */}
         </>
     )
 }

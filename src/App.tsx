@@ -10,9 +10,9 @@ export function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Pokedex/>} />
           <Route path="/pokedex" element={<Pokedex/>} />
-          <Route path="/pokedex/:name" element={<Pokemon/>} />
+          <Route path="/:name" element={<Pokemon/>} />
         </Routes>
       </BrowserRouter>
     </>

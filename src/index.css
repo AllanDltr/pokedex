@@ -3,7 +3,28 @@
 @tailwind utilities;
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --steel: #aaaabb;
+  --fairy: #ff79ae;
+  --fighting: #bb5544;
+  --dragon: #7766ee;
+  --water: #3399ff;
+  --electric: #ffbb33;
+  --fire: #ff4422;
+  --ice: #77ddff;
+  --bug: #aabb22;
+  --normal: #bbaabb;
+  --grass: #77cc55;
+  --poison: #aa5599;
+  --psychic: #ff5599;
+  --rock: #bbaa66;
+  --ground: #ddbb55;
+  --ghost: #6666bb;
+  --dark: #665544;
+  --flying: #6699ff;
 }

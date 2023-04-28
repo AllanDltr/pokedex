@@ -22,15 +22,15 @@ export const Cards = () => {
 
       <div className="flex w-screen justify-start">
         {pokemonData.types.map((type) => (
-          <p className="m-4 p-1 border-solid border-black rounded-xl typesPkmn">
+          <p className="m-4 p-1 border-solid border-white rounded-xl typesPkmn" style={{backgroundColor: `var(--${type})` }}   key={type}>
             {type}
           </p>
         ))}
       </div>
 
       <div className="avatar flex justify-center avatarPkmn">
-        <div className="w-24 rounded-full">
-          <img src={pokemonData.sprites} />
+        <div>
+          <img src={`../../public/img/${pokemonData.order}.png`} />
         </div>
       </div>
 
