@@ -1,5 +1,4 @@
 import { pokemonData } from "../../datas/functions"
-import { bulbasaurDatas } from "../../datas/pokemons"
 import "./TabEvolutions.css"
 export const TabEvolutions = () => {
   return (
