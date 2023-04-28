@@ -1,4 +1,3 @@
-import {Home} from './pages/Home'
 import {Pokedex} from './pages/Pokedex'
 import {Pokemon} from './pages/Pokemon'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
