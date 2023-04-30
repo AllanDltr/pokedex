@@ -8,7 +8,7 @@ export const TabEvolutions = () => {
       <div className="flex justify-center m-7">
         <div className="avatar ">
           <div className="w-24 rounded-full evolutionPkmn">
-            <img src={"../../public/img/1.png"} />
+            <img src={"/img/1.png"} />
           </div>
         </div>
         <div className="flex items-center px-10 arrowEvo">
@@ -17,7 +17,7 @@ export const TabEvolutions = () => {
         </div>
         <div className="avatar ">
           <div className="w-24 rounded-full evolutionPkmn">
-            <img src={"../../public/img/2.png"} />
+            <img src={"/img/2.png"} />
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@ export const TabEvolutions = () => {
       <div className="flex justify-center m-7">
         <div className="avatar ">
           <div className="w-24 rounded-full evolutionPkmn">
-            <img src={"../../public/img/2.png"} />
+            <img src={"/img/2.png"} />
           </div>
         </div>
         <div className="flex items-center px-10 arrowEvo">
@@ -35,7 +35,7 @@ export const TabEvolutions = () => {
         </div>
         <div className="avatar ">
           <div className="w-24 rounded-full evolutionPkmn">
-            <img src={"../../public/img/3.png"} />
+            <img src={"img/3.png"} />
           </div>
         </div>
       </div>
