@@ -18,7 +18,7 @@ export const Thumbnails = () => {
           key={pokemon.name}
         >
           <figure>
-            <img src={`../../public/img/${pokemon.url.split('/')[6]}.png`} alt={pokemon.name} />
+            <img src={`/img/${pokemon.url.split('/')[6]}.png`} alt={pokemon.name} />
           </figure>
           <div className="card-body bodySize">
             <h2 className="card-title">{pokemon.name}</h2>

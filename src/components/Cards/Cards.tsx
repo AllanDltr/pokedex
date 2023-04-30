@@ -30,7 +30,7 @@ export const Cards = () => {
 
       <div className="avatar flex justify-center avatarPkmn">
         <div>
-          <img src={`../../public/img/${pokemonData.order}.png`} />
+          <img src={`/img/${pokemonData.order}.png`} />
         </div>
       </div>
 
