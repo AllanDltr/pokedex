@@ -6,8 +6,20 @@ import {
   venusaurDatas,
   pokemonDatas,
 } from "../datas/pokemons"
+// type PokemonType = {
+//   name: string
+//   order?: number
+//   url: string
+// }
+
+// const pokemon: PokemonType = {
+//   name: bulbasaurDatas[0].name,
+//   order: bulbasaurDatas[0].order,
+//   url: pokemonDatas[0].url,
+// }
 interface PokemonData {
   name?: string
+  url: string
   order?: number
   types: string[]
   sprites?: string
@@ -27,20 +39,9 @@ interface PokemonData {
   evolution2Sprites: string
 }
 
-type Pokemon = {
-  name: string
-  order?: number
-  url: string
-}
-
-const pokemon: Pokemon = {
-  name: bulbasaurDatas[0].name,
-  order: bulbasaurDatas[0].order,
-  url: pokemonDatas[0].url,
-}
-
 const pokemonData: PokemonData = {
   name: bulbasaurDatas[0].name,
+  url: bulbasaurDatas[0].species.url,
   order: bulbasaurDatas[0].order,
   types: [
     bulbasaurDatas[0].types[0]?.type.name,
@@ -67,5 +68,5 @@ const pokemonData: PokemonData = {
   evolution2Sprites: venusaurDatas[0].sprites.front_default,
   // venusaurDatas[0].sprites.front_default,
 }
-export { pokemonData, pokemon }
-export type { Pokemon }
+export { pokemonData, }
+export type { PokemonData }
