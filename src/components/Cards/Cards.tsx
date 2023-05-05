@@ -1,38 +1,77 @@
-import { pokemonData } from "../../datas/functions"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { TabAbout } from "../TabAbout/TabAbout"
-import { TabStats } from "../TabStats/TabStats"
 import { TabEvolutions } from "../TabEvolutions/TabEvolutions"
+import { TabStats } from "../TabStats/TabStats"
 import "./Cards.css"
-import { useState } from "react"
 
 export const Cards = () => {
+  const [pokemonCardsDatas, setpokemonCardsDatas] = useState<PokemonCardsDatas[]
+  >([])
   const [currentTab, setCurrentTab] = useState<
     "about" | "stats" | "evolutions"
   >("about")
 
+  type PokemonCardsDatas = {
+    name: string
+    id: number
+    type: {
+      name: string
+    }
+  }
+
+  useEffect(() => {
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/1`)
+      .then((response) => {
+        const types = response.data.types.map((type: PokemonCardsDatas) => type.type.name)
+        const pokemonCardsMain = {
+          name: response.data.name,
+          id: response.data.id,
+          type: types,
+        }
+        setpokemonCardsDatas([pokemonCardsMain])
+        console.log(pokemonCardsDatas)
+      })
+      .catch((error) => console.log(error))
+  }, [])
+
   return (
     <>
-      <div className="flex justify-between w-screen">
-        <p className="text-4xl font-bold m-4 pokemonName">
-          {" "}
-          {pokemonData.name}{" "}
-        </p>
-        <p className="text-3xl font-bold m-4"> #{pokemonData.order} </p>
-      </div>
-
-      <div className="flex w-screen justify-start">
-        {pokemonData.types.map((type) => (
-          <p className="m-4 p-1 border-solid border-white rounded-xl typesPkmn" style={{backgroundColor: `var(--${type})` }}   key={type}>
-            {type}
+      {pokemonCardsDatas[0] && (
+        <div className="flex justify-between w-screen">
+          <p className="text-4xl font-bold m-4 pokemonName">
+            {" "}
+            {pokemonCardsDatas[0].name}{" "}
           </p>
-        ))}
-      </div>
-
-      <div className="avatar flex justify-center avatarPkmn">
-        <div>
-          <img src={`/img/${pokemonData.order}.png`} />
+          <p className="text-3xl font-bold m-4">
+            {" "}
+            #{pokemonCardsDatas[0].id}{" "}
+          </p>
         </div>
-      </div>
+      )}
+
+      {pokemonCardsDatas[0] && (
+        <div className="flex w-screen justify-start">
+          {pokemonCardsDatas[0].type.map((type:string) => (
+            <p
+              className="m-4 border-solid border-white rounded-xl typesPkmn p-2 text-white"
+              style={{ backgroundColor: `var(--${type})` }}
+              key={type}
+            >
+              {type}
+            </p>
+          ))}
+        </div>
+      )}
+
+      {pokemonCardsDatas[0] && (
+        <div className="avatar flex justify-center avatarPkmn">
+          <div>
+            <img src={`/img/${pokemonCardsDatas[0].id}.png`} />
+          </div>
+        </div>
+      )}
 
       <div className="tabs mb-8">
         <a
