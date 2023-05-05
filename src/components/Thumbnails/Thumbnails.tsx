@@ -66,7 +66,7 @@ export const Thumbnails = () => {
             <div className="card-actions justify-center">
               <button
                 className="btn btn-ghost btn-xs button_pkmn"
-                onClick={() => navigate(`/${pokemon.name}`)}
+                onClick={() => navigate(`/${pokemon.id}`)}
               >
                 
               </button>

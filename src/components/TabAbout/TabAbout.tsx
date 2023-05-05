@@ -6,7 +6,8 @@ export const TabAbout = () => {
   const [pokemonDetailsAboutDatas, setPokemonDetailsAboutDatas] = useState<PkmnAboutDatas>(
     {height: 0, weight: 0}
   )
-
+  const pathURL = window.location.pathname
+  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
  type PkmnAboutDatas = {
   height: number
   weight: number
@@ -14,7 +15,7 @@ export const TabAbout = () => {
 
   useEffect(() => {
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon/1`)
+        .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
         .then((response) => {
           const pokemonDetailsAbout:PkmnAboutDatas = {
             height: response.data.height,

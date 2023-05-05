@@ -6,7 +6,8 @@ export const TabStats = () => {
   const [pokemonDetailsStatsDatas, setPokemonDetailsStatsDatas] = useState<PkmnStatsDatas[]>(
     []
   )
-
+  const pathURL = window.location.pathname
+  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
  type PkmnStatsDatas = {
   HP: number
   Atk: number
@@ -18,7 +19,7 @@ export const TabStats = () => {
 
   useEffect(() => {
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon/1`)
+        .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
         .then((response) => {
           const pokemonStatsAbout:PkmnStatsDatas = {
             HP: response.data.stats[0].base_stat,

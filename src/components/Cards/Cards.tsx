@@ -8,30 +8,31 @@ import "./Cards.css"
 export const Cards = () => {
   const [pokemonCardsDatas, setpokemonCardsDatas] = useState<PokemonCardsDatas[]
   >([])
+  
+  const pathURL = window.location.pathname
+  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
   const [currentTab, setCurrentTab] = useState<
     "about" | "stats" | "evolutions"
   >("about")
 
+
   type PokemonCardsDatas = {
     name: string
     id: number
-    type: {
-      name: string
-    }
+    type: string[]
   }
 
   useEffect(() => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/1`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
       .then((response) => {
-        const types = response.data.types.map((type: PokemonCardsDatas) => type.type.name)
+        const types = response.data.types.map((type: {type: {name:string}}) => type.type.name)
         const pokemonCardsMain = {
           name: response.data.name,
           id: response.data.id,
           type: types,
         }
         setpokemonCardsDatas([pokemonCardsMain])
-        console.log(pokemonCardsDatas)
       })
       .catch((error) => console.log(error))
   }, [])
