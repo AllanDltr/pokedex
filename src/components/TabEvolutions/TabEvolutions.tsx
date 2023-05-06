@@ -41,7 +41,7 @@ export const TabEvolutions = () => {
         </div>
         <div className="flex items-center px-10 arrowEvo">
           <div> {"->"} </div>
-          <div> Lvl {pokemonData.evolution} </div>
+          <div> Lvl {pokemonEvolutionDatas.evolutionLvl} </div>
         </div>
         <div className="avatar ">
           <div className="w-24 rounded-full evolutionPkmn">

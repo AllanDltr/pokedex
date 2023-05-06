@@ -43,8 +43,7 @@ export const Cards = () => {
       {pokemonCardsDatas[0] && (
         <div className="flex justify-between w-screen">
           <p className="text-4xl font-bold m-4 pokemonName">
-            {" "}
-            {pokemonCardsDatas[0].name}{" "}
+            {pokemonCardsDatas[0].name}
           </p>
           <p className="text-3xl font-bold m-4"> #{pokemonCardsDatas[0].id} </p>
         </div>

@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { pokemonData } from "../../datas/functions"
 import "./TabAbout.css"
 export const TabAbout = () => {
   const [pokemonDescriptionAboutDatas, setPokemonDescriptionAboutDatas] =useState<PkmnDescriptionDatas>({ description: "" })

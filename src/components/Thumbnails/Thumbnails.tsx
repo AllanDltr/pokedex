@@ -48,9 +48,10 @@ export const Thumbnails = () => {
         <div
           className="card bg-base-100 shadow-xl image-full thumbnailSize"
           key={pokemon.name}
+          onClick={() => navigate(`/${pokemon.id}`)}
         >
           <figure>
-            <img src={`/img/${pokemon.id}.png`} alt={pokemon.name} />
+            <img className="mb-2" src={`/img/${pokemon.id}.png`} alt={pokemon.name} />
           </figure>
           <div className="card-body bodySize">
             <h2 className="card-title">{pokemon.name}</h2>
@@ -64,10 +65,10 @@ export const Thumbnails = () => {
               </p>
             ))}
             <div className="card-actions justify-center">
-              <button
+              {/* <button
                 className="btn btn-ghost btn-xs button_pkmn"
                 onClick={() => navigate(`/${pokemon.id}`)}
-              ></button>
+              ></button> */}
             </div>
           </div>
         </div>

@@ -10,3 +10,7 @@
   border-width: 1px;
   text-transform: capitalize;
 }
+
+.bodySize {
+  height:136px !important;
+}

@@ -17,6 +17,7 @@
 figure {
   justify-content: flex-end !important;
   margin-left: 6rem !important;
+  align-items: flex-end !important;
 }
 
 figure > img {
