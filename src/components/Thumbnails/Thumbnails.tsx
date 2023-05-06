@@ -67,9 +67,7 @@ export const Thumbnails = () => {
               <button
                 className="btn btn-ghost btn-xs button_pkmn"
                 onClick={() => navigate(`/${pokemon.id}`)}
-              >
-                
-              </button>
+              ></button>
             </div>
           </div>
         </div>

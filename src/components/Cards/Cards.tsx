@@ -6,15 +6,14 @@ import { TabStats } from "../TabStats/TabStats"
 import "./Cards.css"
 
 export const Cards = () => {
-  const [pokemonCardsDatas, setpokemonCardsDatas] = useState<PokemonCardsDatas[]
+  const [pokemonCardsDatas, setpokemonCardsDatas] = useState<
+    PokemonCardsDatas[]
   >([])
-  
   const pathURL = window.location.pathname
-  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
+  const idURL = pathURL.substring(pathURL.lastIndexOf("/") + 1)
   const [currentTab, setCurrentTab] = useState<
     "about" | "stats" | "evolutions"
   >("about")
-
 
   type PokemonCardsDatas = {
     name: string
@@ -26,7 +25,9 @@ export const Cards = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
       .then((response) => {
-        const types = response.data.types.map((type: {type: {name:string}}) => type.type.name)
+        const types = response.data.types.map(
+          (type: { type: { name: string } }) => type.type.name
+        )
         const pokemonCardsMain = {
           name: response.data.name,
           id: response.data.id,
@@ -35,7 +36,7 @@ export const Cards = () => {
         setpokemonCardsDatas([pokemonCardsMain])
       })
       .catch((error) => console.log(error))
-  }, [])
+  })
 
   return (
     <>
@@ -45,16 +46,13 @@ export const Cards = () => {
             {" "}
             {pokemonCardsDatas[0].name}{" "}
           </p>
-          <p className="text-3xl font-bold m-4">
-            {" "}
-            #{pokemonCardsDatas[0].id}{" "}
-          </p>
+          <p className="text-3xl font-bold m-4"> #{pokemonCardsDatas[0].id} </p>
         </div>
       )}
 
       {pokemonCardsDatas[0] && (
         <div className="flex w-screen justify-start">
-          {pokemonCardsDatas[0].type.map((type:string) => (
+          {pokemonCardsDatas[0].type.map((type: string) => (
             <p
               className="m-4 border-solid border-white rounded-xl typesPkmn p-2 text-white"
               style={{ backgroundColor: `var(--${type})` }}

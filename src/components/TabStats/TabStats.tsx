@@ -3,37 +3,36 @@ import { useEffect, useState } from "react"
 import "./TabStats.css"
 
 export const TabStats = () => {
-  const [pokemonDetailsStatsDatas, setPokemonDetailsStatsDatas] = useState<PkmnStatsDatas[]>(
-    []
-  )
+  const [pokemonDetailsStatsDatas, setPokemonDetailsStatsDatas] = useState<
+    PkmnStatsDatas[]
+  >([])
   const pathURL = window.location.pathname
-  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
- type PkmnStatsDatas = {
-  HP: number
-  Atk: number
-  Def: number
-  AtkSp: number
-  DefSp: number
-  Spd: number
- }
+  const idURL = pathURL.substring(pathURL.lastIndexOf("/") + 1)
+  type PkmnStatsDatas = {
+    HP: number
+    Atk: number
+    Def: number
+    AtkSp: number
+    DefSp: number
+    Spd: number
+  }
 
   useEffect(() => {
-      axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
-        .then((response) => {
-          const pokemonStatsAbout:PkmnStatsDatas = {
-            HP: response.data.stats[0].base_stat,
-            Atk: response.data.stats[1].base_stat,
-            Def: response.data.stats[2].base_stat,
-            AtkSp: response.data.stats[3].base_stat,
-            DefSp: response.data.stats[4].base_stat,
-            Spd: response.data.stats[5].base_stat,
-          }
-          setPokemonDetailsStatsDatas([pokemonStatsAbout])
-        })
-        .catch((error) => console.log(error))
-  },[])
-
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
+      .then((response) => {
+        const pokemonStatsAbout: PkmnStatsDatas = {
+          HP: response.data.stats[0].base_stat,
+          Atk: response.data.stats[1].base_stat,
+          Def: response.data.stats[2].base_stat,
+          AtkSp: response.data.stats[3].base_stat,
+          DefSp: response.data.stats[4].base_stat,
+          Spd: response.data.stats[5].base_stat,
+        }
+        setPokemonDetailsStatsDatas([pokemonStatsAbout])
+      })
+      .catch((error) => console.log(error))
+  }, [])
 
   return (
     <>

@@ -3,36 +3,52 @@ import { useEffect, useState } from "react"
 import { pokemonData } from "../../datas/functions"
 import "./TabAbout.css"
 export const TabAbout = () => {
-  const [pokemonDetailsAboutDatas, setPokemonDetailsAboutDatas] = useState<PkmnAboutDatas>(
-    {height: 0, weight: 0}
-  )
+  const [pokemonDescriptionAboutDatas, setPokemonDescriptionAboutDatas] =useState<PkmnDescriptionDatas>({ description: "" })
+  const [pokemonDetailsAboutDatas, setPokemonDetailsAboutDatas] =
+    useState<PkmnAboutDatas>({ height: 0, weight: 0 })
   const pathURL = window.location.pathname
-  const idURL = pathURL.substring(pathURL.lastIndexOf('/') + 1)
- type PkmnAboutDatas = {
-  height: number
-  weight: number
- }
+  const idURL = pathURL.substring(pathURL.lastIndexOf("/") + 1)
+  type PkmnAboutDatas = {
+    height: number
+    weight: number
+  }
+  type PkmnDescriptionDatas = {
+    description: string
+  }
 
   useEffect(() => {
-      axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
-        .then((response) => {
-          const pokemonDetailsAbout:PkmnAboutDatas = {
-            height: response.data.height,
-            weight: response.data.weight,
-          }
-          setPokemonDetailsAboutDatas(pokemonDetailsAbout)
-        })
-        .catch((error) => console.log(error))
-  },[])
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${idURL}`)
+      .then((response) => {
+        const pokemonDetailsAbout: PkmnAboutDatas = {
+          height: response.data.height,
+          weight: response.data.weight,
+        }
+        setPokemonDetailsAboutDatas(pokemonDetailsAbout)
+      })
+      .catch((error) => console.log(error))
+  }, [])
 
-  const heightCm = (pokemonData.height * 2.54).toFixed(1)
-  const weightKg = (pokemonData.weight / 2.205).toFixed(1)
+
+  useEffect(() => {
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon-species/${idURL}`)
+      .then((response) => {
+        const pokemonDescriptionAbout: PkmnDescriptionDatas = {
+          description: response.data.flavor_text_entries[0].flavor_text,
+        }
+        setPokemonDescriptionAboutDatas(pokemonDescriptionAbout)
+      })
+      .catch((error) => console.log(error))
+  }, [])
+
+  const heightCm = (pokemonDetailsAboutDatas.height * 2.54).toFixed(1)
+  const weightKg = (pokemonDetailsAboutDatas.weight / 2.205).toFixed(1)
   return (
     <div className="tab-content tabAbout">
       <p className="text-xl font-bold m-4"> Description </p>
 
-      <p className="m-4 text-m"> {pokemonData.description}</p>
+      <p className="m-4 text-m"> {pokemonDescriptionAboutDatas.description}</p>
       <div className="stats-sm mx-2 rounded-lg statsPkmn">
         <div className="stat statPkmn">
           <div className="stat-title">Height</div>

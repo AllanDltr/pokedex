@@ -61,9 +61,10 @@ const pokemonData: PokemonData = {
   Spd: bulbasaurDatas[0].stats[5].base_stat,
   evolution: [
     bulbasaurEvoDatas[0].chain.evolves_to[0].evolution_details[0].min_level,
-],
+  ],
   evolution2: [
-  bulbasaurEvoDatas[0].chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level,
+    bulbasaurEvoDatas[0].chain.evolves_to[0].evolves_to[0].evolution_details[0]
+      .min_level,
   ],
   evolutionSprites: ivysaurDatas[0].sprites.front_default,
   evolution2Sprites: venusaurDatas[0].sprites.front_default,

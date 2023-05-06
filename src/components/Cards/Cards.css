@@ -1,12 +1,12 @@
 .pokemonName {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .avatarPkmn {
-    height:200px;
+  height: 200px;
 }
 
 .typesPkmn {
-    border-width: 1px;
-    text-transform: capitalize;
+  border-width: 1px;
+  text-transform: capitalize;
 }

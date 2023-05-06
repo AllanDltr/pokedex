@@ -1,0 +1,24 @@
+.backArrow {
+  font-size: 25px;
+  line-height: 25px;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  transform: rotate(180deg);
+  color: black;
+}
+
+.backArrow:active {
+  position: relative;
+  right: 2px;
+}
+.arrowContainer {
+  padding-top: 8px;
+  align-items: center;
+}
+
+.pokeballImg {
+  width: 50px;
+  display: flex;
+  animation: spin 1s linear infinite;
+}

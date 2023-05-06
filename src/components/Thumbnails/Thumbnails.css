@@ -1,51 +1,51 @@
 .card-title {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .types {
-    width:60px;
-    text-transform: capitalize;
-    border-radius: 5px;
-    border-color: rgb(204, 201, 201);
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
-    background-color: rgb(204, 201, 201);
-    color: black;
+  width: 60px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border-color: rgb(204, 201, 201);
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  background-color: rgb(204, 201, 201);
+  color: black;
 }
 
 figure {
-    justify-content: flex-end !important;
-    margin-left:6rem !important;
+  justify-content: flex-end !important;
+  margin-left: 6rem !important;
 }
 
 figure > img {
-    height:85px !important;
-    width: 150px !important;
-    object-fit: unset !important;
+  height: 85px !important;
+  width: 150px !important;
+  object-fit: unset !important;
 }
 
 .card.image-full:before {
-    background: none !important;
+  background: none !important;
 }
 
 .card-title {
-    color:black;
+  color: black;
 }
 
 .thumbnailSize {
-    width:175px;
+  width: 175px;
 }
 
 .bodySize {
-    padding:1rem !important;
-    flex-grow: 0 !important;
+  padding: 1rem !important;
+  flex-grow: 0 !important;
 }
 
 .card-body :where(p) {
-    flex-grow: initial !important;
+  flex-grow: initial !important;
 }
 
 .button_pkmn {
-    width:100%;
+  width: 100%;
 }
