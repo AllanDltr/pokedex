@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/datas/pokemons.ts
+src/datas/pokemons.tsx
