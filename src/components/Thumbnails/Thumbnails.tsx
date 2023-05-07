@@ -1,11 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import type { PokemonData } from "../../datas/functions"
 import "./Thumbnails.css"
 
 type mapPkmnType = {
+  name: string
   slot: number
+  id: number
+  types: string[]
   type: {
     name: string
     url: string
@@ -13,7 +15,7 @@ type mapPkmnType = {
 }
 
 export const Thumbnails = () => {
-  const [pokemonDetailsDatas, setPokemonDetailsDatas] = useState<PokemonData[]>(
+  const [pokemonDetailsDatas, setPokemonDetailsDatas] = useState<mapPkmnType[]>(
     []
   )
   const navigate = useNavigate()
@@ -44,7 +46,7 @@ export const Thumbnails = () => {
 
   return (
     <div className="grid grid-cols-2 gap-10">
-      {sortedData.map((pokemon: PokemonData) => (
+      {sortedData.map((pokemon:mapPkmnType ) => (
         <div
           className="card bg-base-100 shadow-xl image-full thumbnailSize"
           key={pokemon.name}
@@ -55,7 +57,7 @@ export const Thumbnails = () => {
           </figure>
           <div className="card-body bodySize">
             <h2 className="card-title">{pokemon.name}</h2>
-            {pokemon.types.map((type) => (
+            {pokemon.types.map((type:string) => (
               <p
                 className="types"
                 key={type}
@@ -65,10 +67,6 @@ export const Thumbnails = () => {
               </p>
             ))}
             <div className="card-actions justify-center">
-              {/* <button
-                className="btn btn-ghost btn-xs button_pkmn"
-                onClick={() => navigate(`/${pokemon.id}`)}
-              ></button> */}
             </div>
           </div>
         </div>
